@@ -1,39 +1,39 @@
 <template>
   <div class="list">
-    <div v-for="task in taskStore.tasks" :key="task.id">
+    <div v-for="manga in mangaStore.mangas" :key="manga.id">
       <div class="list-item"
-        v-if="taskStore.activeFilter === 'Todas' || taskStore.activeFilter === ''">
-        <v-checkbox :label="task.title" v-model="task.completed" />
+        v-if="mangaStore.activeFilter === 'Todos' || mangaStore.activeFilter === ''">
+        <v-checkbox :label="manga.title" v-model="manga.completed" />
         <v-icon v-if="type === 'home'" class="delete-icon mb-5"
-          @click="taskStore.deleteTask(task)">mdi-trash-can-outline</v-icon>
-        <v-icon class="pen-icon mb-5" @click="taskStore.editTask(task)"
+          @click="mangaStore.deleteManga(manga)">mdi-trash-can-outline</v-icon>
+        <v-icon class="pen-icon mb-5" @click="mangaStore.editManga(manga)"
           v-else>mdi-pen</v-icon>
       </div>
       <div
-        v-else-if="taskStore.activeFilter === 'Concluidas' && task.completed === true"
+        v-else-if="mangaStore.activeFilter === 'Lidos' && manga.completed === true"
         class="list-item">
-        <v-checkbox :label="task.title" v-model="task.completed" />
+        <v-checkbox :label="manga.title" v-model="manga.completed" />
         <v-icon v-if="type === 'home'" class="delete-icon mb-5"
-          @click="taskStore.deleteTask(task)">mdi-trash-can-outline</v-icon>
+          @click="mangaStore.deleteManga(manga)">mdi-trash-can-outline</v-icon>
         <v-icon v-else class="pen-icon mb-5"
-          @click="taskStore.editTask(task)">mdi-pen</v-icon>
+          @click="mangaStore.editManga(manga)">mdi-pen</v-icon>
       </div>
       <div class="list-item"
-        v-else-if="taskStore.activeFilter === 'Pendentes' && !task.completed">
-        <v-checkbox :label="task.title" v-model="task.completed" />
+        v-else-if="mangaStore.activeFilter === 'Para ler' && !manga.completed">
+        <v-checkbox :label="manga.title" v-model="manga.completed" />
         <v-icon v-if="type === 'home'" class="delete-icon mb-5"
-          @click="taskStore.deleteTask(task)">mdi-trash-can-outline</v-icon>
+          @click="mangaStore.deleteManga(manga)">mdi-trash-can-outline</v-icon>
         <v-icon v-else class="pen-icon mb-5"
-          @click="taskStore.editTask(task)">mdi-pen</v-icon>
+          @click="mangaStore.editManga(manga)">mdi-pen</v-icon>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useTaskStore } from '../stores/TaskStore.js'
+import { useMangaStore } from '../stores/MangaStore.js'
 
-const taskStore = useTaskStore()
+const mangaStore = useMangaStore()
 
 const props = defineProps({
   type: String

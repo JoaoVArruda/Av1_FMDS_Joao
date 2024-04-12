@@ -30,15 +30,15 @@
 <script setup>
 const links = [
     {
-        name: 'Tarefas',
+        name: 'Mangas',
         icon: 'mdi-note-multiple-outline',
-        tooltip: 'Tarefas',
+        tooltip: 'Mangas',
         to: '/'
     },
     {
         name: 'Editar',
         icon: 'mdi-lead-pencil',
-        tooltip: 'Editar Tarefas',
+        tooltip: 'Editar Mangas',
         to: '/edit'
     },
 ]

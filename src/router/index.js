@@ -1,4 +1,3 @@
-
 /**
  * router/index.ts
  *
@@ -6,10 +5,29 @@
  */
 
 // Composables
-import { createRouter, createWebHistory } from 'vue-router/auto'
+import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-})
+  routes: [
+    // route default to layout and childrens to pages
+    {
+      path: "/",
+      component: () => import("@/components/Layout.vue"),
+      children: [
+        {
+          path: "",
+          name: "Home",
+          component: () => import("@/pages/Home.vue"),
+        },
+        {
+          path: "/edit",
+          name: "Edit",
+          component: () => import("@/pages/Edit.vue"),
+        },
+      ],
+    },
+  ],
+  history: createWebHistory(import.meta.env.BASE_URL),
+});
 
-export default router
+export default router;

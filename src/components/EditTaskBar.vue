@@ -46,4 +46,4 @@ const taskStore = useTaskStore()
 .cancel-icon {
   color: red
 }
-</style>
+</style>../stores/MangaStore.js

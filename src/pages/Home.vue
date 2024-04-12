@@ -1,26 +1,26 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div class="">
-        <h1>Tarefas</h1>
+        <h1>Lista de Mangas</h1>
 
         <TaskBar />
-        <v-select label="Filtrar Tarefas" :items='taskFilter'
-            v-model="taskStore.activeFilter"></v-select>
+        <v-select label="Filtrar Mangas" :items='mangaFilter'
+            v-model="mangaStore.activeFilter"></v-select>
         <ListApp type="home" />
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { useTaskStore } from '../stores/TaskStore.js'
+import { useMangaStore } from '../stores/MangaStore.js'
 import TaskBar from '../components/TaskBar.vue'
 import ListApp from '@/components/ListApp.vue';
 
-const taskStore = useTaskStore()
+const mangaStore = useMangaStore()
 
-const taskFilter = ref(['Todas', 'Concluidas', 'Pendentes'])
+const mangaFilter = ref(['Todos', 'Lidos', 'Para ler'])
 
-const activeFilter = ref('Todas')
+const activeFilter = ref('Todos')
 
 
 </script>
@@ -28,7 +28,7 @@ const activeFilter = ref('Todas')
 <style>
 .list {
     list-style: none;
-    background-color: #fff;
+    background-color: #69706a;
     padding: 1.4rem 1rem 0;
     border-radius: 0.5rem;
 }
@@ -37,16 +37,16 @@ const activeFilter = ref('Todas')
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ffffff;
 }
 
 .delete-icon {
-    color: rgba(253, 0, 0, 0.926);
+    color: rgba(214, 15, 15, 0.599);
     cursor: pointer;
     transition: 0.2s;
 }
 
 .delete-icon:hover {
-    color: darkred;
+    color: rgb(118, 4, 4);
 }
-</style>
+</style>../stores/MangaStore.js

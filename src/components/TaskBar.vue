@@ -21,4 +21,4 @@
 import { useTaskStore } from '../stores/TaskStore.js'
 
 const taskStore = useTaskStore()
-</script>
+</script>../stores/MangaStore.js

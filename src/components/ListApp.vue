@@ -75,4 +75,4 @@ const props = defineProps({
 .delete-icon:hover {
   color: darkred;
 }
-</style>
+</style>../stores/MangaStore.js

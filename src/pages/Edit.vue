@@ -20,3 +20,4 @@ const taskStore = useTaskStore()
 const taskFilter = ref(['Todas', 'Concluidas', 'Pendentes'])
 
 </script>
+../stores/MangaStore.js

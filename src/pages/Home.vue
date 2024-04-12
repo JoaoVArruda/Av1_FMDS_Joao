@@ -28,9 +28,10 @@ const activeFilter = ref('Todos')
 <style>
 .list {
     list-style: none;
-    background-color: #69706a;
+    background-color: #373a37;
     padding: 1.4rem 1rem 0;
     border-radius: 0.5rem;
+    color: rgb(255, 255, 255);
 }
 
 .list-item {

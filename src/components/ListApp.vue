@@ -5,26 +5,26 @@
         v-if="mangaStore.activeFilter === 'Todos' || mangaStore.activeFilter === ''">
         <v-checkbox :label="manga.title" v-model="manga.completed" />
         <v-icon v-if="type === 'home'" class="delete-icon mb-5"
-          @click="mangaStore.deleteManga(manga)">mdi-trash-can-outline</v-icon>
-        <v-icon class="pen-icon mb-5" @click="mangaStore.editManga(manga)"
-          v-else>mdi-pen</v-icon>
+          @click="mangaStore.deleteManga(manga)">mdi-close</v-icon>
+        <v-icon class="pencil-icon mb-5" @click="mangaStore.editManga(manga)"
+          v-else>mdi-pencil</v-icon>
       </div>
       <div
         v-else-if="mangaStore.activeFilter === 'Lidos' && manga.completed === true"
         class="list-item">
         <v-checkbox :label="manga.title" v-model="manga.completed" />
         <v-icon v-if="type === 'home'" class="delete-icon mb-5"
-          @click="mangaStore.deleteManga(manga)">mdi-trash-can-outline</v-icon>
-        <v-icon v-else class="pen-icon mb-5"
-          @click="mangaStore.editManga(manga)">mdi-pen</v-icon>
+          @click="mangaStore.deleteManga(manga)">mdi-close</v-icon>
+        <v-icon v-else class="pencil-icon mb-5"
+          @click="mangaStore.editManga(manga)">mdi-pencil</v-icon>
       </div>
       <div class="list-item"
         v-else-if="mangaStore.activeFilter === 'Para ler' && !manga.completed">
         <v-checkbox :label="manga.title" v-model="manga.completed" />
         <v-icon v-if="type === 'home'" class="delete-icon mb-5"
-          @click="mangaStore.deleteManga(manga)">mdi-trash-can-outline</v-icon>
-        <v-icon v-else class="pen-icon mb-5"
-          @click="mangaStore.editManga(manga)">mdi-pen</v-icon>
+          @click="mangaStore.deleteManga(manga)">mdi-close</v-icon>
+        <v-icon v-else class="pencil-icon mb-5"
+          @click="mangaStore.editManga(manga)">mdi-pencil</v-icon>
       </div>
     </div>
   </div>
@@ -44,35 +44,36 @@ const props = defineProps({
 <style>
 .list {
   list-style: none;
-  background-color: #fff;
+  background-color: #373a37;
   padding: 1.4rem 1rem 0;
   border-radius: 0.5rem;
+  color: white;
 }
 
 .list-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #ffffff;
 }
 
 .delete-icon {
-  color: rgba(253, 0, 0, 0.926);
+  color: rgba(214, 15, 15, 0.599);
   cursor: pointer;
   transition: 0.2s;
 }
 
-.pen-icon {
-  color: rgb(0, 112, 216);
+.pencil-icon {
+  color: rgba(0, 97, 189, 0.733);
   cursor: pointer;
   transition: 0.2s
 }
 
-.pen-icon:hover {
+.pencil-icon:hover {
   color: rgb(0, 83, 160);
 }
 
 .delete-icon:hover {
-  color: darkred;
+  color: rgb(118, 4, 4);
 }
 </style>../stores/MangaStore.js

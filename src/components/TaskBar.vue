@@ -1,10 +1,10 @@
 <template>
   <v-card class="pa-4" height="100px"
-    img="https://cdn.vuetifyjs.com/images/toolbar/map.jpg" flat>
-    <v-toolbar dense floating>
+    img="https://cdn.vuetifyjs.com/images/toolbar/map.jpg" flat color="black">
+    <v-toolbar dense floating color="white">
       <v-text-field hide-details single-line v-model="mangaStore.newManga"
         @keypress.enter="mangaStore.addManga"
-        placeholder="Inserir Manga"></v-text-field>
+        placeholder="Inserir Manga" bg-color="white"></v-text-field>
 
       <v-tooltip text="Adicionar Manga">
         <template v-slot:activator="{ props }">

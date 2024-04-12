@@ -2,7 +2,7 @@
 <template>
     <v-app id="inspire">
         <v-app-bar class="px-3 py-2" density="compact" flat
-            color="blue-grey-darken-3">
+            color="black">
             <v-tabs align-tabs="start">
                 <v-tooltip v-for="link in links" :key="link" :text="link.name">
                     <template v-slot:activator="{ props }">
@@ -15,7 +15,7 @@
             <v-spacer></v-spacer>
         </v-app-bar>
 
-        <v-main class="bg-grey-lighten-3">
+        <v-main class="bg-black">
             <v-container fluid>
                 <v-row>
                     <v-col cols="12" md="8" class="mx-auto">
@@ -31,9 +31,9 @@
 const links = [
     {
         name: 'Mangas',
-        icon: 'mdi-note-multiple-outline',
+        icon: 'mdi-book-open-variant',
         tooltip: 'Mangas',
-        to: '/'
+        to: '/',
     },
     {
         name: 'Editar',

@@ -33,7 +33,7 @@ const links = [
         name: 'Mangas',
         icon: 'mdi-book-open-variant',
         tooltip: 'Mangas',
-        to: '/',
+        to: '/'
     },
     {
         name: 'Editar',

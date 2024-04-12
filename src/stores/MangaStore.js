@@ -75,12 +75,12 @@ export const useMangaStore = defineStore('manga', {
       this.editedIndex = this.mangas.indexOf(manga)
       focus('newManga')
     },
-    saveEdit() {
+    save() {
       Object.assign(this.mangas[this.editedIndex], this.editedManga)     
       this.editedManga = Object.assign({}, this.defaultManga) 
       this.editedIndex = -1
     },
-    cancelEdit() {
+    cancel() {
       this.editedManga = Object.assign({}, this.defaultManga)
       this.editedIndex = -1
     }

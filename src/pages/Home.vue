@@ -3,24 +3,22 @@
     <div class="">
         <h1>Lista de Mangas</h1>
 
-        <TaskBar />
+        <Manga />
         <v-select label="Filtrar Mangas" :items='mangaFilter'
             v-model="mangaStore.activeFilter"></v-select>
-        <ListApp type="home" />
+        <List type="home" />
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { useMangaStore } from '../stores/MangaStore.js'
-import TaskBar from '../components/TaskBar.vue'
-import ListApp from '@/components/ListApp.vue';
+import Manga from '../components/Manga.vue'
+import List from '@/components/List.vue';
 
 const mangaStore = useMangaStore()
 
 const mangaFilter = ref(['Todos', 'Lidos', 'Para ler'])
-
-const activeFilter = ref('Todos')
 
 
 </script>
@@ -50,4 +48,4 @@ const activeFilter = ref('Todos')
 .delete-icon:hover {
     color: rgb(118, 4, 4);
 }
-</style>../stores/MangaStore.js
+</style>../stores/MangaStore.js../components/Manga.vue/index.js

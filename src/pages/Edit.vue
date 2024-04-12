@@ -2,18 +2,18 @@
     <div class="">
         <h1>Editar Mangas</h1>
 
-        <EditTaskBar />
+        <EditManga />
         <v-select label="Filtrar Mangas" :items='mangaFilter'
             v-model="mangaStore.activeFilter"></v-select>
-        <ListApp type="edit" />
+        <List type="edit" />
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { useMangaStore } from '../stores/MangaStore.js'
-import EditTaskBar from '../components/EditTaskBar.vue';
-import ListApp from '@/components/ListApp.vue';
+import EditManga from '../components/EditManga.vue';
+import List from '@/components/List.vue';
 
 const mangaStore = useMangaStore()
 

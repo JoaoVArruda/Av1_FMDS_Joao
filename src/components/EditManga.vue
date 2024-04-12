@@ -5,7 +5,7 @@
       <v-text-field hide-details single-line
         v-model="mangaStore.editedManga.title"
         @keypress.enter="mangaStore.save" placeholder="Editar Manga"
-        :readonly="mangaStore.editedIndex === -1" bg-color="white" color="white"></v-text-field>
+        :readonly="mangaStore.editedIndex === -1"  bg-color="white" color="white"></v-text-field>
       <v-tooltip text="Salvar">
         <template v-slot:activator="{ props }">
           <v-btn icon v-bind="props" @click="mangaStore.save"
@@ -26,7 +26,7 @@
     <v-toolbar dense floating v-else>
       <v-text-field hide-details single-line
         :model-value="mangaStore.editedManga.title"
-        @keypress.enter="mangaStore.addManga" disabled
+        @keypress.enter="mangaStore.add" disabled
         placeholder="Inserir Manga"></v-text-field>
     </v-toolbar>
   </v-card>

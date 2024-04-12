@@ -54,8 +54,9 @@ export const useMangaStore = defineStore('manga', {
       },
   ],
   }),
+
   actions: {
-    addManga() {
+    add() {
       if(this.newManga) {
         this.mangas.push({
           "id": this.mangas.length + 1,
@@ -67,13 +68,13 @@ export const useMangaStore = defineStore('manga', {
         return
       }
     },
-    deleteManga(manga) {
+    delete(manga) {
       this.mangas = this.mangas.filter(m => m.id !== manga.id)
     },
-    editManga(manga) {
-      this.editedManga = Object.assign({}, manga)
-      this.editedIndex = this.mangas.indexOf(manga)
-      focus('newManga')
+
+    edit(manga) {
+      this.editedManga = Object.assign({}, manga);
+      this.editedIndex = this.mangas.indexOf(manga);
     },
     save() {
       Object.assign(this.mangas[this.editedIndex], this.editedManga)     

@@ -1,9 +1,10 @@
 <template>
     <div class="">
-        <h1>Editar Mangas</h1>
-
+        <br>
+        <h1 style="text-align: center;">Editar Mangas</h1>
+        <br>
         <EditManga />
-        <v-select label="Filtrar Mangas" :items='mangaFilter'
+        <v-select label="Filtros" :items='mangaFilter'
             v-model="mangaStore.activeFilter"></v-select>
         <List type="edit" />
     </div>

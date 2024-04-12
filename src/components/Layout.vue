@@ -1,18 +1,17 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <v-app id="inspire">
-        <v-app-bar class="px-3 py-2" density="compact" color="black">
-            <v-tabs align-tabs="center">
+       <v-tabs align-tabs="center" bg-color="black" color="white">
                 <v-tooltip v-for="link in links" :key="link" :text="link.name">
-                    <template v-slot:activator="{ props }">
-                        <v-tab v-bind="props" :to="link.to">
-                            <v-icon>{{ link.icon }}</v-icon>
+                    <template v-slot:activator="{ on }">
+                        <v-tab v-bind="on" :to="link.to">
+                            <v-icon class="mr-2">{{ link.icon }}</v-icon>
+                            {{ link.name }}
                         </v-tab>
                     </template>
                 </v-tooltip>
             </v-tabs>
             <v-spacer></v-spacer>
-        </v-app-bar>
 
         <v-main class="bg-black">
             <v-container fluid>
@@ -35,9 +34,9 @@ const links = [
         to: '/'
     },
     {
-        name: 'Editar',
+        name: 'Editar Mangas',
         icon: 'mdi-lead-pencil',
-        tooltip: 'Editar Mangas',
+        tooltip: 'Editar',
         to: '/edit'
     },
 ]

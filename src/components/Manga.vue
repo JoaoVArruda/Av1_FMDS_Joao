@@ -3,12 +3,12 @@
     img="https://cdn.vuetifyjs.com/images/toolbar/map.jpg" flat color="black">
     <v-toolbar dense floating color="white">
       <v-text-field hide-details single-line v-model="mangaStore.newManga"
-        @keypress.enter="mangaStore.addManga"
+        @keypress.enter="mangaStore.add"
         placeholder="Inserir Manga" bg-color="white"></v-text-field>
 
       <v-tooltip text="Adicionar Manga">
         <template v-slot:activator="{ props }">
-          <v-btn @click="mangaStore.addManga" icon v-bind="props" class="ml-2">
+          <v-btn @click="mangaStore.add" icon v-bind="props" class="ml-2">
             <v-icon>mdi-plus</v-icon>
           </v-btn>
         </template>

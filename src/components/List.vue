@@ -5,8 +5,8 @@
         v-if="mangaStore.activeFilter === 'Todos' || mangaStore.activeFilter === ''">
         <v-checkbox :label="manga.title" v-model="manga.completed" />
         <v-icon v-if="type === 'home'" class="delete-icon mb-5"
-          @click="mangaStore.deleteManga(manga)">mdi-close</v-icon>
-        <v-icon class="pencil-icon mb-5" @click="mangaStore.editManga(manga)"
+          @click="mangaStore.delete(manga)">mdi-close</v-icon>
+        <v-icon class="pencil-icon mb-5" @click="mangaStore.edit(manga)"
           v-else>mdi-pencil</v-icon>
       </div>
       <div
@@ -14,17 +14,17 @@
         class="list-item">
         <v-checkbox :label="manga.title" v-model="manga.completed" />
         <v-icon v-if="type === 'home'" class="delete-icon mb-5"
-          @click="mangaStore.deleteManga(manga)">mdi-close</v-icon>
+          @click="mangaStore.delete(manga)">mdi-close</v-icon>
         <v-icon v-else class="pencil-icon mb-5"
-          @click="mangaStore.editManga(manga)">mdi-pencil</v-icon>
+          @click="mangaStore.edit(manga)">mdi-pencil</v-icon>
       </div>
       <div class="list-item"
         v-else-if="mangaStore.activeFilter === 'Para ler' && !manga.completed">
         <v-checkbox :label="manga.title" v-model="manga.completed" />
         <v-icon v-if="type === 'home'" class="delete-icon mb-5"
-          @click="mangaStore.deleteManga(manga)">mdi-close</v-icon>
+          @click="mangaStore.delete(manga)">mdi-close</v-icon>
         <v-icon v-else class="pencil-icon mb-5"
-          @click="mangaStore.editManga(manga)">mdi-pencil</v-icon>
+          @click="mangaStore.edit(manga)">mdi-pencil</v-icon>
       </div>
     </div>
   </div>

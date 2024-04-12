@@ -1,10 +1,11 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div class="">
-        <h1>Lista de Mangas</h1>
-
+        <br>
+        <h1 style="text-align: center;">Lista de Mangas</h1>
+        <br>
         <Manga />
-        <v-select label="Filtrar Mangas" :items='mangaFilter'
+        <v-select label="Filtros" :items='mangaFilter'
             v-model="mangaStore.activeFilter"></v-select>
         <List type="home" />
     </div>

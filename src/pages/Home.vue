@@ -26,7 +26,7 @@ const mangaFilter = ref(['Todos', 'Lidos', 'Para ler'])
 <style>
 .list {
     list-style: none;
-    background-color: #373a37;
+    background-color :black;
     padding: 1.4rem 1rem 0;
     border-radius: 0.5rem;
     color: rgb(255, 255, 255);
